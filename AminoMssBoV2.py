@@ -20,7 +20,7 @@ ndcId = clients.ndcId[int(input("Select the community >> ")) - 1]
 def chats_spam():
     with concurrent.futures.ThreadPoolExecutor(max_workers=100) as executor:
         try:
-            chats = client.get_public_chat_threads(ndc_Id=ndc_Id, size=100)
+            chats = client.get_public_chat_threads(ndcId=ndcId, size=100)
             for chat_Id, title in zip(chats.thread_Id, chats.title):
                 print(f"Joined To Chat {title}")
                 _ = [executor.submit(client.join_thread, ndc_Id, chat_Id) for _ in range(2)]
