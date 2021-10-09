@@ -15,7 +15,7 @@ message = input("Message >> ")
 clients = client.my_communities()
 for x, name in enumerate(clients.name, 1):
     print(f"{x}.{name}")
-ndc_Id = clients.ndc_Id[int(input("Select the community >> ")) - 1]
+ndcId = clients.ndcId[int(input("Select the community >> ")) - 1]
 
 def chats_spam():
     with concurrent.futures.ThreadPoolExecutor(max_workers=100) as executor:
