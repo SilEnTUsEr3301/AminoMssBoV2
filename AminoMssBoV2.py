@@ -27,8 +27,8 @@ def chats_spam():
                 _ = [
                     executor.submit(
                         client.send_message,
-                        ndc_Id,
-                        chat_Id,
+                        ndcId,
+                        chatId,
                         message) for _ in range(12)]
                 print(f"Spammed Chat {title}")
             print("All Chats Spammed")
