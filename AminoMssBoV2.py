@@ -21,7 +21,7 @@ def chats_spam():
     with concurrent.futures.ThreadPoolExecutor(max_workers=100) as executor:
         try:
             chats = client.get_public_chat_threads(ndcId=ndcId, size=100)
-            for chatId, title in zip(chats.thread_Id, chats.title):
+            for chatId, title in zip(chats.threadId, chats.title):
                 print(f"Joined To Chat {title}")
                 _ = [executor.submit(client.join_thread, ndcId, chatId) for _ in range(2)]
                 _ = [
